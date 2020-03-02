@@ -6,3 +6,13 @@
 */
 
 #include <stdlib.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+
+/*solver/main*/
+int file_error(char **av);
+
+void arg_error(int ac, char **av);
+
+

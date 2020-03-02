@@ -9,6 +9,6 @@
 
 int main(int ac, char **av)
 {
-    my_printf("GENERATOR !!");
+    my_printf("GENERATOR");
     return (0);
 }

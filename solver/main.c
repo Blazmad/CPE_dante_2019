@@ -25,7 +25,7 @@ int file_error(char **av)
     int fd = 0;
 
     if ((fd = open(av[1], O_RDONLY)) == -1) {
-        printf("error with map\n");
+        printf("can't read the map\n");
         exit(84);
     }
     return (0);

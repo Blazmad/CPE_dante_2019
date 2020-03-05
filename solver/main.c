@@ -22,6 +22,6 @@ void arg_error(int ac)
 int main(int ac, char **av)
 {
     arg_error(ac);
-    get_map(av);
+    maze_gestion(av);
     return (0);
 }

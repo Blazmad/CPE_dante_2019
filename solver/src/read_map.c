@@ -28,7 +28,6 @@ char *get_map(char **av)
     status = read(fd, buffer, size.st_size);
     read_error(fd, status);
     buffer[size.st_size] = '\0';
-    my_putstr(buffer);
     close(fd);
     return (buffer);
 }

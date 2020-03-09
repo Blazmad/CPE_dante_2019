@@ -15,4 +15,3 @@ int maze_gestion(char **av)
     my_show_word_array(double_array);
     return (0);
 }
-

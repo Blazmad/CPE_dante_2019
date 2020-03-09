@@ -77,6 +77,6 @@ int maze_generator(dante_t dante,  int perfect)
     dante.maze = clean_maze(dante);
     if (perfect == 1)
         dante.maze = update_into_imperfect_maze(dante);
-    my_show_word_array(dante.maze);
+    print_maze(dante.maze);
     return (0);
 }

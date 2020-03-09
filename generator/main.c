@@ -7,16 +7,6 @@
 
 #include "my.h"
 
-dante_t init_dante(dante_t dante, char *x, char *y)
-{
-    dante.maze = NULL;
-    dante.x = my_getnbr(x);
-    dante.y = my_getnbr(y);
-    dante.i = 0;
-    dante.j = 0;
-    return (dante);
-}
-
 int main(int ac, char **av)
 {
     dante_t dante;

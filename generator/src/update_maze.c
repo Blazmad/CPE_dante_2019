@@ -20,8 +20,7 @@ dante_t update_maze_up(dante_t dante, int num)
             dante.maze[dante.i - 1][dante.j] = '0';
             dante.maze[dante.i - 2][dante.j] = '0';
             dante.i -= 2;
-        } else if (dante.maze[dante.i - 2][dante.j] == '0' &&
-            dante.maze[dante.i - 1][dante.j] == 'X')
+        } else
             return (update_maze_up(dante, rand()%4));
     }
     return (dante);
@@ -42,10 +41,7 @@ dante_t update_maze_right(dante_t dante, int num)
             dante.maze[dante.i][dante.j + 1] = '0';
             dante.maze[dante.i][dante.j + 2] = '0';
             dante.j += 2;
-        } else if ((dante.maze[dante.i][dante.j + 2] == '0' &&
-            dante.maze[dante.i][dante.j + 1] != '0') ||
-            (dante.maze[dante.i][dante.j + 2] == 'X' &&
-            dante.maze[dante.i][dante.j + 1] == 'X'))
+        } else
             return (update_maze_right(dante, rand()%4));
     }
     return (dante);
@@ -67,10 +63,7 @@ dante_t update_maze_down(dante_t dante, int num)
             dante.maze[dante.i + 1][dante.j] = '0';
             dante.maze[dante.i + 2][dante.j] = '0';
             dante.i += 2;
-        } else if ((dante.maze[dante.i + 2][dante.j] == '0' &&
-            dante.maze[dante.i + 1][dante.j] == 'X') ||
-            (dante.maze[dante.i + 2][dante.j] == 'X' &&
-            dante.maze[dante.i + 1][dante.j] == 'X'))
+        } else
             return (update_maze_down(dante, rand()%4));
     }
     return (dante);
@@ -89,8 +82,7 @@ dante_t update_maze_left(dante_t dante, int num)
             dante.maze[dante.i][dante.j - 1] = '0';
             dante.maze[dante.i][dante.j - 2] = '0';
             dante.j -= 2;
-        } else if (dante.maze[dante.i][dante.j - 2] == '0' &&
-            dante.maze[dante.i][dante.j - 1] == 'X')
+        } else
             return (update_maze_left(dante, rand()%4));
     }
     return (dante);

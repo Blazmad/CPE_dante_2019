@@ -20,4 +20,8 @@ void check_map(maze_t maze)
             }
         }
     }
+    if (maze.maz[0][0] =! '*') {
+        printf("Invalid map\n");
+        exit(84);
+    }
 }

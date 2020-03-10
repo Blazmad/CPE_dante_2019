@@ -12,6 +12,13 @@
 #include <fcntl.h>
 #include <unistd.h>
 
+typedef struct maze
+{
+    int lines;
+    int cols;
+    char **maz;
+}maze_t;
+
 typedef struct dante
 {
     char **maze;
@@ -36,6 +43,7 @@ dante_t init_dante(dante_t dante, char *x, char *y);
 void print_maze(char **maze);
 
 //---------maze_read-----------------------|
-int maze_gestion(char **av);
+int maze_gestion(char **av, maze_t maze);
 char *get_map(char **av);
-
+char **my_str_to_word_array_dante(char const *str);
+void check_map(maze_t maze);

@@ -21,7 +21,13 @@ void arg_error(int ac)
 
 int main(int ac, char **av)
 {
+    maze_t maze;
+    char *file = NULL;
+
+    file = get_map(av);
+    maze.maz = my_str_to_word_array_dante(file);
+    check_map(maze);
+    my_show_word_array(maze.maz);
     arg_error(ac);
-    maze_gestion(av);
     return (0);
 }

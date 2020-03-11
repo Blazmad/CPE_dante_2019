@@ -35,7 +35,9 @@ dante_t update_maze_up(dante_t dante, int num);
 dante_t init_dante(dante_t dante, char *x, char *y);
 void print_maze(char **maze);
 
-//---------maze_read-----------------------|
-int maze_gestion(char **av);
-char *get_map(char **av);
+//---------read_map.c-----------------------|
+int maze_solver(char *filepath, dante_t dante);
+char *get_map(char *filepath);
 
+//---------display_map.c-----------------------|
+dante_t my_str_to_word_array_dante(char const *str, dante_t dante);

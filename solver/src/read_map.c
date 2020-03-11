@@ -16,14 +16,14 @@ int read_error(int fd, int status)
     return (0);
 }
 
-char *get_map(char **av)
+char *get_map(char *filepath)
 {
     struct stat size;
-    int fd = open(av[1], O_RDONLY);
+    int fd = open(filepath, O_RDONLY);
     char *buffer;
     int status;
 
-    stat(av[1], &size);
+    stat(filepath, &size);
     buffer = malloc(sizeof(char) * (size.st_size + 1));
     status = read(fd, buffer, size.st_size);
     read_error(fd, status);

@@ -10,18 +10,20 @@
 void arg_error(int ac)
 {
     if (ac < 2) {
-        printf("not enough arguments\n");
+        my_printf("not enough arguments\n");
         exit(84);
     }
     else if (ac > 2) {
-        printf("too many arguments\n");
+        my_printf("too many arguments\n");
         exit(84);
     }
 }
 
 int main(int ac, char **av)
 {
+    dante_t dante;
+
     arg_error(ac);
-    maze_gestion(av);
+    maze_solver(av[1], dante);
     return (0);
 }

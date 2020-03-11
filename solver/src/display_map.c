@@ -7,11 +7,49 @@
 
 #include "my.h"
 
-int maze_gestion(char **av)
+int nb_lines_dante(char const *str)
 {
-    char *buffer = get_map(av);
-    char **double_array = my_str_to_word_array(buffer);
+    int i = 0;
+    int line = 0;
 
-    my_show_word_array(double_array);
-    return (0);
+    while (str[i] != '\0') {
+        if (str[i] == '\n')
+            line++;
+        i++;
+    }
+    return (line + 1);
+}
+
+int nb_char_dante(char const *str)
+{
+    int i = 0;
+
+    while (str[i] != '\n')
+        i++;
+    return (i);
+}
+
+dante_t my_str_to_word_array_dante(char const *str, dante_t dante)
+{
+    int i = 0;
+    int j = 0;
+    int k = 0;
+    dante.y = nb_lines_dante(str);
+    dante.x = nb_char_dante(str);
+    dante.maze = malloc(sizeof(char *) * (dante.y + 1));
+
+    while (i < dante.y) {
+        dante.maze[i] = malloc(sizeof(char) * dante.x + 1);
+        j = 0;
+        while (str[k] != '\n' && str[k] != '\0') {
+            dante.maze[i][j] = str[k];
+            j++;
+            k++;
+        }
+        dante.maze[i][j] = '\0';
+        i++;
+        k++;
+    }
+    dante.maze[i] = NULL;
+    return (dante);
 }

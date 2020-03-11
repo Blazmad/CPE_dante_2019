@@ -12,6 +12,13 @@
 #include <fcntl.h>
 #include <unistd.h>
 
+typedef struct maze
+{
+    int lines;
+    int cols;
+    char **maz;
+}maze_t;
+
 typedef struct dante
 {
     char **maze;

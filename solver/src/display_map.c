@@ -1,6 +1,6 @@
 /*
 ** EPITECH PROJECT, 2019
-** solver
+** CPE_dante_2019
 ** File description:
 ** display_map.c
 */
@@ -33,21 +33,17 @@ dante_t my_str_to_word_array_dante(char const *str, dante_t dante)
 {
     int i = 0;
     int j = 0;
-    int k = 0;
     dante.y = nb_lines_dante(str);
     dante.x = nb_char_dante(str);
     dante.maze = malloc(sizeof(char *) * (dante.y + 1));
 
-    while (i < dante.y) {
+    for (int k = 0; i < dante.y; i++) {
         dante.maze[i] = malloc(sizeof(char) * dante.x + 1);
-        j = 0;
-        while (str[k] != '\n' && str[k] != '\0') {
+        for (j = 0; str[k] != '\n' && str[k] != '\0'; j++) {
             dante.maze[i][j] = str[k];
-            j++;
             k++;
         }
         dante.maze[i][j] = '\0';
-        i++;
         k++;
     }
     dante.maze[i] = NULL;

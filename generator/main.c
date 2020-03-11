@@ -15,6 +15,10 @@ int main(int ac, char **av)
         return (84);
     if (check_argument(av[1], av[2]) != 0)
         return (84);
+    if (av[1][0] == '1' && av[2][0] == '1') {
+        my_putstr("*");
+        return (0);
+    }
     dante = init_dante(dante, av[1], av[2]);
     if (ac == 3)
         maze_generator(dante, 1);

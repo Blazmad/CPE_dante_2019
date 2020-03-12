@@ -12,25 +12,30 @@
 #include <fcntl.h>
 #include <unistd.h>
 
-typedef struct maze
-{
-    int lines;
-    int cols;
-    char **maz;
-}maze_t;
-
 typedef struct dante
 {
     char **maze;
+    int **val_maze;
     int x;
     int y;
     int i;
     int j;
 }dante_t;
 
+//---------check_map.c-----------------------|
+void check_map(dante_t dante);
+
+//---------make_mazes.c-----------------------|
+dante_t int_from_maze(dante_t dante);
+dante_t my_str_to_word_array_dante(char const *str, dante_t dante);
+
 //----------mazes_generator.c---------------|
 int check_argument(char *arg1, char *arg2);
 int maze_generator(dante_t dante,  int perfect);
+
+//---------read_map.c-----------------------|
+int maze_solver(char *filepath, dante_t dante);
+char *get_map(char *filepath);
 
 //----------update_mazes.c------------------|
 dante_t update_maze_down(dante_t dante, int num);
@@ -42,9 +47,8 @@ dante_t update_maze_up(dante_t dante, int num);
 dante_t init_dante(dante_t dante, char *x, char *y);
 void print_maze(char **maze);
 
-//---------read_map.c-----------------------|
-int maze_solver(char *filepath, dante_t dante);
-char *get_map(char *filepath);
+//----------solver_algorithm.c-------------------------|
+dante_t solve_algo(dante_t dante);
 
-//---------display_map.c-----------------------|
-dante_t my_str_to_word_array_dante(char const *str, dante_t dante);
+//----------solver_algorithm_utils.c-------------------------|
+int compare_next_way(dante_t dante, int **val_maze, int i, int j);

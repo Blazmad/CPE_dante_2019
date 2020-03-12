@@ -49,3 +49,20 @@ dante_t my_str_to_word_array_dante(char const *str, dante_t dante)
     dante.maze[i] = NULL;
     return (dante);
 }
+
+dante_t int_from_maze(dante_t dante)
+{
+    int x = 0;
+
+    dante.val_maze = malloc(sizeof(long long *) * (dante.y + 1));
+    for (int i = 0; i < dante.y; i++) {
+        dante.val_maze[i] = malloc (sizeof(long long) * (dante.x));
+        for (int j = 0; j < dante.x; j++, x++) {
+            if (dante.maze[i][j] != 'X')
+                dante.val_maze[i][j] = i + j + x;
+            else
+                dante.val_maze[i][j] = -1;
+        }
+    }
+    return (dante);
+}

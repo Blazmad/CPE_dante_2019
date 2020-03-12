@@ -7,21 +7,19 @@
 
 #include "my.h"
 
-void check_map(maze_t maze)
+void check_map(dante_t dante)
 {
     int i = 0;
     int j = 0;
 
-    if (maze.maz[0][0] != '*') {
+    if (dante.maze[0][0] != '*') {
         my_printf("Invalid map\n");
         exit(84);
     }
-    for (i = 0; maze.maz[i]; i++) {
-        for (j = 0; maze.maz[i][j]; j++) {
-            if (maze.maz[i][j] != '*' && maze.maz[i][j] != 'X') {
+    for (i = 0; dante.maze[i]; i++)
+        for (j = 0; dante.maze[i][j]; j++)
+            if (dante.maze[i][j] != '*' && dante.maze[i][j] != 'X') {
                 my_printf("Invalid map\n");
                 exit(84);
             }
-        }
-    }
 }

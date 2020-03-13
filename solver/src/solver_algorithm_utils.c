@@ -7,7 +7,7 @@
 
 #include "my.h"
 
-dante_t clean_maze(dante_t dante)
+dante_t clean_mazes(dante_t dante)
 {
     for (int i = 0; dante.maze[i]; i++)
         for (int j = 0; dante.maze[i][j]; j++)
@@ -58,8 +58,8 @@ int maze_solver(char *filepath, dante_t dante)
     dante = my_str_to_word_array_dante(buffer, dante);
     dante = int_from_maze(dante);
     check_map(dante);
-    dante = solve_algo(dante);
-    dante = clean_maze(dante);
+    dante = imperfect_algo(dante);
+    dante = clean_mazes(dante);
     my_show_word_array(dante.maze);
     return (0);
 }

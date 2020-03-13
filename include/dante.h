@@ -44,11 +44,16 @@ dante_t update_maze_right(dante_t dante, int num);
 dante_t update_maze_up(dante_t dante, int num);
 
 //----------utils.c-------------------------|
+char **clean_maze(dante_t dante);
 dante_t init_dante(dante_t dante, char *x, char *y);
 void print_maze(char **maze);
 
-//----------solver_algorithm.c-------------------------|
-dante_t solve_algo(dante_t dante);
+//----------solver_algorithm_imperfect.c-------|
+dante_t imperfect_algo(dante_t dante);
 
-//----------solver_algorithm_utils.c-------------------------|
+//----------solver_algorithm_perfect.c---------|
+int second_algo(dante_t dante);
+
+//----------solver_algorithm_utils.c-----------|
+dante_t clean_mazes(dante_t dante);
 int compare_next_way(dante_t dante, int **val_maze, int i, int j);

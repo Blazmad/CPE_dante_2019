@@ -52,7 +52,7 @@ dante_t solve_algo(dante_t dante)
     dante.maze[0][0] = 'o';
     while (dante.maze[dante.y - 1][dante.x - 1] != 'o') {
         next = compare_next_way(dante, dante.val_maze, i, j);
-        (next == -1 ? my_printf("no solution found\n"), exit(0) : 0);        
+        (next == 4 ? my_printf("no solution found\n"), exit(0) : 0);        
         (next == 0 ? move_up(&dante, i, j), i-- : 0);        
         (next == 1 ? move_right(&dante, i, j), j++ : 0);
         (next == 2 ? move_down(&dante, i, j), i++ : 0);

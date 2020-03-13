@@ -26,6 +26,8 @@ int wich_nbr_is_highest(int a, int b, int c, int d)
         return (2);
     if (d > a && d > b && d > c)
         return (3);
+    if (a == -1 && d == -1 && c == -1 && d == -1)
+        return (4);
     return (-1);
 }
 

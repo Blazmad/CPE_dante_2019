@@ -29,6 +29,10 @@ void check_map(dante_t dante);
 dante_t int_from_maze(dante_t dante);
 dante_t my_str_to_word_array_dante(char const *str, dante_t dante);
 
+//---------make_easy_mazes.c-------------------|
+char **make_imperfect_maze(dante_t dante);
+char **make_perfect_maze(dante_t dante);
+
 //----------mazes_generator.c---------------|
 int check_argument(char *arg1, char *arg2);
 int maze_generator(dante_t dante,  int perfect);
@@ -52,6 +56,7 @@ void print_maze(char **maze);
 dante_t imperfect_algo(dante_t dante);
 
 //----------solver_algorithm_perfect.c---------|
+int	perfect_algo(dante_t *dante, int i, int j);
 int second_algo(dante_t dante);
 
 //----------solver_algorithm_utils.c-----------|

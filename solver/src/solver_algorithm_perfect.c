@@ -10,13 +10,13 @@
 int perfect_algo_bis(dante_t *dante, int i, int j)
 {
     if (i + 1 < dante->y && dante->maze[i + 1][j] == '*' &&
-        perfect_algo(i + 1, j, dante) == 0)
+        perfect_algo(dante, i + 1, j) == 0)
         return (0);
     if (j - 1 >= 0 && dante->maze[i][j - 1] == '*' &&
-        perfect_algo(i, j - 1, dante) == 0)
+        perfect_algo(dante, i, j - 1) == 0)
         return (0);
     if (i - 1 >= 0 && dante->maze[i - 1][j] == '*' &&
-        perfect_algo(i - 1, j, dante) == 0)
+        perfect_algo(dante, i - 1, j) == 0)
         return (0);
     dante->maze[i][j] = 'A';
     return (-1);
@@ -28,9 +28,9 @@ int	perfect_algo(dante_t *dante, int i, int j)
     if (j == dante->x - 1 && i == dante->y - 1)
         return (0);
     if (j + 1 < dante->x && dante->maze[i][j + 1] == '*' &&
-        perfect_algo(i, j + 1, dante) == 0)
+        perfect_algo(dante, i, j + 1) == 0)
         return (0);
-    if (perfect_algo_bis(i, j, dante) == 0)
+    if (perfect_algo_bis(dante, i, j) == 0)
         return (0);
     return (-1);
 }

@@ -71,12 +71,11 @@ char **clean_maze(dante_t dante)
 
 int maze_generator(dante_t dante,  int perfect)
 {
-
-    dante.maze = init_maze_without_way(dante.x, dante.y);
-    dante.maze = make_maze(dante);
-    dante.maze = clean_maze(dante);
+    srand(time(NULL));
+    if (perfect == 0)
+        dante.maze = make_perfect_maze(dante);
     if (perfect == 1)
-        dante.maze = update_into_imperfect_maze(dante);
+        dante.maze = make_imperfect_maze(dante);
     print_maze(dante.maze);
     return (0);
 }

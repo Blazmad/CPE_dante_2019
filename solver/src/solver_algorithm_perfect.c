@@ -43,7 +43,7 @@ int second_algo(dante_t dante)
                 dante.maze[i][j] = '*';
     if (perfect_algo(&dante, 0, 0) == -1) {
         my_printf("no solution found\n");
-        exit(0);
+        exit(84);
     }
     return (0);
 }

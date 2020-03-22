@@ -51,6 +51,16 @@ int compare_next_way(dante_t dante, int **val_maze, int i, int j)
     return (next);
 }
 
+void free_all(dante_t dante)
+{
+    for (int i = 0; dante.maze[i]; i++)
+        free(dante.maze[i]);
+    for (int i = 0; i < dante.y; i++)
+        free(dante.val_maze[i]);
+    free(dante.maze);
+    free(dante.val_maze);
+}
+
 int maze_solver(char *filepath, dante_t dante)
 {
     char *buffer = get_map(filepath);
@@ -61,5 +71,6 @@ int maze_solver(char *filepath, dante_t dante)
     dante = imperfect_algo(dante);
     dante = clean_mazes(dante);
     my_show_word_array(dante.maze);
+    free_all(dante);
     return (0);
 }

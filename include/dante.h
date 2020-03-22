@@ -56,7 +56,7 @@ void print_maze(char **maze);
 dante_t imperfect_algo(dante_t dante);
 
 //src/solver_algorithm_perfect.c
-int	perfect_algo(dante_t *dante, int i, int j);
+int	perfect_maze(dante_t *dante, int i, int j);
 int second_algo(dante_t dante);
 
 //src/solver_algorithm_utils.c

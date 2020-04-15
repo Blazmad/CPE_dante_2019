@@ -7,6 +7,15 @@
 
 #include "my.h"
 
+void print_maze(char **maze)
+{
+    for (int i = 0; maze[i]; i++) {
+        my_putstr(maze[i]);
+        if (maze[i + 1] != NULL)
+            my_putchar('\n');
+    }
+}
+
 int nb_lines_dante(char const *str)
 {
     int i = 0;

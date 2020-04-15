@@ -28,6 +28,7 @@ void check_map(dante_t dante);
 //src/make_mazes.c
 dante_t int_from_maze(dante_t dante);
 dante_t my_str_to_word_array_dante(char const *str, dante_t dante);
+void print_maze(char **maze);
 
 //src/make_easy_mazes.c
 char **make_imperfect_maze(dante_t dante);

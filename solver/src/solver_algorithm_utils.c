@@ -70,7 +70,7 @@ int maze_solver(char *filepath, dante_t dante)
     check_map(dante);
     dante = imperfect_algo(dante);
     dante = clean_mazes(dante);
-    my_show_word_array(dante.maze);
+    print_maze(dante.maze);
     free_all(dante);
     return (0);
 }

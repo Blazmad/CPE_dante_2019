@@ -27,7 +27,7 @@ char **init_maze_without_way(int x, int y)
     int j = 0;
 
     for (; i < y; i++) {
-        maze[i] = malloc(sizeof(char) * x + 1);
+        maze[i] = malloc(sizeof(char) * (x + 1));
         maze[0][0] = '0';
         for (j = 0; j < x; j++) {
             if (j % 2 == 0 && i % 2 == 0)
@@ -72,8 +72,11 @@ char **clean_maze(dante_t dante)
 int maze_generator(dante_t dante,  int perfect)
 {
     srand(time(NULL));
-    if (perfect == 0)
-        dante.maze = make_perfect_maze(dante);
+    if (perfect == 0) {
+        dante.maze = init_maze_without_way(dante.x, dante.y);
+        dante.maze = make_maze(dante);
+        dante.maze = clean_maze(dante);
+    }
     if (perfect == 1)
         dante.maze = make_imperfect_maze(dante);
     print_maze(dante.maze);
